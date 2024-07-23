@@ -14,15 +14,14 @@ class Formatter
   end
 
   def format(b)
-    last_space = -1
     formatted_text = ''
     lines = b.split("\n")
 
     lines.each do |line|
-      line.strip!  # Remove leading and trailing whitespace
+      line.strip! # Remove leading and trailing whitespace
 
       # Insert indentation if a new line.
-      if @indent.length > 0 && @current_width == 0
+      if @indent.length.positive? && @current_width.zero?
         formatted_text << @indent
         @current_width = @indent.length
       end
@@ -31,8 +30,8 @@ class Formatter
       line.split.each do |word|
         word_length = word.length
 
-        if @current_width + word_length + 1 <= @width || @current_width == 0
-          formatted_text << ' ' if @current_width > 0
+        if @current_width + word_length + 1 <= @width || @current_width.zero?
+          formatted_text << ' ' if @current_width.positive?
           formatted_text << word
           @current_width += word_length + 1
         else
@@ -46,6 +45,5 @@ class Formatter
     end
 
     formatted_text
-  end 
+  end
 end
-

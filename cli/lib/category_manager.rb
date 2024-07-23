@@ -1,5 +1,7 @@
-require_relative "./constants"
-require_relative "./category"
+# frozen_string_literal: true
+
+require_relative './constants'
+require_relative './category'
 
 class CategoryManager
   include Constants
@@ -15,15 +17,14 @@ class CategoryManager
     end
   end
 
-  def select_category
-  end
+  def select_category; end
 
   def names
     @categories.keys
   end
 
-  def get_category()
-    names.map do | ky |
+  def get_category
+    names.map do |ky|
       { name: ky, value: @categories[ky] }
     end
   end

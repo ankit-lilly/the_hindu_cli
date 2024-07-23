@@ -1,4 +1,4 @@
-require 'thread'
+# frozen_string_literal: true
 
 module Loader
   SPINNERS = {
@@ -6,7 +6,7 @@ module Loader
     dots: %w[⠋ ⠙ ⠹ ⠸ ⠼ ⠴ ⠦ ⠧ ⠇ ⠏],
     arrow: %w[← ↖ ↑ ↗ → ↘ ↓ ↙],
     bouncing: %w[⠁ ⠂ ⠄ ⠂]
-  }
+  }.freeze
 
   def self.spinner(type = :classic)
     i = 0
@@ -29,4 +29,3 @@ module Loader
     result
   end
 end
-

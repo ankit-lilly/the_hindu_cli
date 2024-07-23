@@ -2,7 +2,7 @@ Experimenting with Ruby to build a small CLI app for reading news directly in yo
 
 
 ```shell
-  bundle install
+bundle install
 ```
 
 
